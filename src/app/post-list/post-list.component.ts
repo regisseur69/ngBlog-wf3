@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-post-list',
@@ -7,29 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-
-  posts: Array<Object> = [
-    {
-      title: "Mon Premier Post",
-      content: "Lorem ipsum",
-      loveIts: 0,
-      created_at: new Date()
-      },
-
-{
-  title: "Mon deuxieme Post",
-    content: "Lorem ipsum",
-      loveIts: 0,
-        created_at: new Date()
-},
-
-{
-  title: "Mon troisieme Post",
-    content: "Lorem ipsum",
-      loveIts: 0,
-        created_at: new Date()
-}
-     ];
+@Input() posts;
+  
 
 
   constructor() { }
